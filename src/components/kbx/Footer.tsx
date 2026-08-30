@@ -22,12 +22,12 @@ export function Footer() {
   return (
     <footer className="bg-ink">
       <div className="h-px w-full bg-white-18" />
-      <div className="kbx-wrap py-20">
-        <div className="flex flex-col gap-14 min-[900px]:flex-row min-[900px]:justify-between">
+      <div className="kbx-wrap py-24">
+        <div className="flex flex-col gap-16 min-[900px]:flex-row min-[900px]:justify-between">
           <div className="max-w-sm">
-            <img src={media.logoMark} alt="KBX" width={112} height={36} className="h-[34px] w-auto object-contain" />
+            <img src={media.logoMark} alt="KBX" width={128} height={42} className="h-[42px] w-auto object-contain" />
             <p className="kbx-micro mt-3 text-white-56">Kingdom Business Connections · Est. 2023</p>
-            <p className="mt-6 text-white-56">
+            <p className="mt-7 text-[1.05rem] leading-7 text-white-56">
               A global network of Christian business professionals and entrepreneurs, founded in
               Lagos.
             </p>
@@ -38,7 +38,7 @@ export function Footer() {
               <a
                 key={link.href}
                 href={link.href}
-                className="text-[0.9rem] text-white-56 transition-colors duration-150 hover:text-white"
+              className="text-[0.98rem] text-white-56 transition-colors duration-150 hover:text-white"
               >
                 {link.label}
               </a>
@@ -57,7 +57,7 @@ export function Footer() {
                   rel="noreferrer"
                   className="text-white transition-colors duration-150 hover:text-gold"
                 >
-                  <Icon size={24} strokeWidth={1.4} aria-hidden="true" />
+                  <Icon size={27} strokeWidth={1.4} aria-hidden="true" />
                 </a>
               ))}
             </div>
