@@ -68,7 +68,7 @@ export function Eyebrow({
 /* ---------- Buttons ---------- */
 
 const buttonBase =
-  "inline-flex items-center justify-center px-7 py-[14px] text-[0.95rem] font-medium tracking-[0.02em] rounded-[2px] transition-[background-color,transform,border-color] duration-[160ms] ease-out";
+  "inline-flex items-center justify-center px-8 py-4 text-base font-medium tracking-[0.02em] rounded-[2px] transition-[background-color,transform,border-color] duration-[160ms] ease-out";
 
 export function GoldButton({
   href,

@@ -32,7 +32,7 @@ export function Nav() {
 
   return (
     <header
-      className="fixed inset-x-0 top-0 z-50 h-[60px] transition-[box-shadow,background-color] duration-150 ease-out min-[900px]:h-[72px]"
+      className="fixed inset-x-0 top-0 z-50 h-[68px] transition-[box-shadow,background-color] duration-150 ease-out min-[900px]:h-[82px]"
       style={{
         backgroundColor: scrolled ? "#0E1622" : "rgba(14,22,34,0.92)",
         boxShadow: scrolled ? "var(--kbx-shadow-soft)" : "none",
@@ -46,25 +46,25 @@ export function Nav() {
             alt="KBX"
             width={96}
             height={32}
-            className="h-[28px] w-auto object-contain min-[900px]:h-[32px]"
+            className="h-[32px] w-auto object-contain min-[900px]:h-[40px]"
           />
           <span className="kbx-micro hidden text-white-56 min-[900px]:inline">
             Kingdom Business Connections
           </span>
         </a>
 
-        <nav className="hidden items-center gap-8 min-[900px]:flex" aria-label="Primary">
+        <nav className="hidden items-center gap-9 min-[900px]:flex" aria-label="Primary">
           {links.map((link) => (
             <a
               key={link.href}
               href={link.href}
-              className="group relative text-[0.9rem] text-white-56 transition-colors duration-150 ease-out hover:text-white"
+              className="group relative text-[0.95rem] text-white-56 transition-colors duration-150 ease-out hover:text-white"
             >
               {link.label}
               <span className="absolute -bottom-1.5 left-0 h-px w-full origin-left scale-x-0 bg-gold transition-transform duration-200 ease-out group-hover:scale-x-100" />
             </a>
           ))}
-          <GoldButton href="#join">Apply to join</GoldButton>
+          <GoldButton href="#join">Join KBX →</GoldButton>
         </nav>
 
         <button
@@ -86,8 +86,8 @@ export function Nav() {
         style={{ transitionTimingFunction: "cubic-bezier(0.4, 0, 0.2, 1)" }}
         aria-hidden={!open}
       >
-        <div className="kbx-wrap flex h-[60px] items-center justify-between">
-          <img src={media.logoMark} alt="KBX" width={80} height={28} className="h-[26px] w-auto object-contain" />
+        <div className="kbx-wrap flex h-[68px] items-center justify-between">
+          <img src={media.logoMark} alt="KBX" width={96} height={32} className="h-[32px] w-auto object-contain" />
           <button
             type="button"
             aria-label="Close menu"
@@ -115,7 +115,7 @@ export function Nav() {
             </a>
           ))}
           <GoldButton href="#join" className="mt-4 w-full">
-            Apply to join
+            Join KBX →
           </GoldButton>
         </nav>
       </div>

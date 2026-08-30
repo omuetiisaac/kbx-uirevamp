@@ -44,7 +44,7 @@
   --kbx-error: #b3261e;
 
   /* Space & shape */
-  --kbx-section: clamp(80px, 11vw, 152px);
+  --kbx-section: clamp(88px, 10vw, 144px);
   --kbx-gutter: clamp(20px, 5vw, 64px);
   --kbx-maxw: 1240px;
 
@@ -168,7 +168,7 @@
 @utility kbx-h1 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(2.6rem, 5.4vw, 4.2rem);
+  font-size: clamp(3.25rem, 6.2vw, 5.25rem);
   line-height: 1.06;
   letter-spacing: -0.035em;
 }
@@ -176,7 +176,7 @@
 @utility kbx-h2 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.9rem, 3.4vw, 2.5rem);
+  font-size: clamp(2.5rem, 4.4vw, 3.5rem);
   line-height: 1.12;
   letter-spacing: -0.03em;
 }
@@ -184,7 +184,7 @@
 @utility kbx-h3 {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.5rem, 2.6vw, 2.1rem);
+  font-size: clamp(1.65rem, 2.6vw, 2.25rem);
   line-height: 1.15;
   letter-spacing: -0.025em;
 }
@@ -192,13 +192,13 @@
 @utility kbx-h3-sm {
   font-family: var(--font-display);
   font-weight: 400;
-  font-size: clamp(1.1rem, 1.5vw, 1.3rem);
+  font-size: clamp(1.3rem, 1.8vw, 1.5rem);
   line-height: 1.2;
   letter-spacing: -0.02em;
 }
 
 @utility kbx-lede {
-  font-size: clamp(1.12rem, 1.5vw, 1.32rem);
+  font-size: clamp(1.08rem, 1.55vw, 1.2rem);
   line-height: 1.5;
   letter-spacing: -0.012em;
 }
@@ -206,7 +206,7 @@
 @utility kbx-eyebrow {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.75rem;
+  font-size: 0.78rem;
   line-height: 1.4;
   letter-spacing: 0.24em;
   text-transform: uppercase;
@@ -215,7 +215,7 @@
 @utility kbx-micro {
   font-family: var(--font-mono);
   font-weight: 500;
-  font-size: 0.7rem;
+  font-size: 0.73rem;
   line-height: 1.3;
   letter-spacing: 0.18em;
   text-transform: uppercase;
