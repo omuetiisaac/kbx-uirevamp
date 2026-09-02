@@ -32,6 +32,7 @@ import {
   CountUp,
 } from "./primitives";
 import { JoinForm } from "./JoinForm";
+import { MarketsMap } from "./MarketsMap";
 import { media } from "@/lib/media";
 
 const ICON = { size: 24, strokeWidth: 1.4 } as const;
@@ -49,16 +50,17 @@ export function Hero() {
   return (
     <section
       id="top"
-      className="relative overflow-hidden bg-ink pt-[calc(60px+var(--kbx-section))] pb-0 min-[900px]:pt-[calc(72px+var(--kbx-section))]"
+      className="relative isolate min-h-[min(860px,100svh)] overflow-hidden bg-ink pt-[calc(60px+var(--kbx-section))] min-[900px]:pt-[calc(72px+var(--kbx-section))]"
     >
-      <div
+      <img
+        src="/media/kbx-hero-band.jpg"
+        alt=""
         aria-hidden="true"
-        className="pointer-events-none absolute inset-0"
-        style={{
-          background:
-            "radial-gradient(60vw 60vw at 82% 8%, rgba(203,161,53,0.08), rgba(203,161,53,0) 60%)",
-        }}
+        width={1920}
+        height={823}
+        className="kbx-hero-background absolute inset-0 -z-20 h-full w-full object-cover"
       />
+      <div aria-hidden="true" className="absolute inset-0 -z-10 bg-ink/70" />
       <div className="kbx-wrap relative pb-[var(--kbx-section)]">
         <div className="kbx-hero-item" style={{ animationDelay: "0ms" }}>
           <Eyebrow tone="dark">Kingdom Business Connections · Est. 2023</Eyebrow>
@@ -105,16 +107,6 @@ export function Hero() {
         </div>
       </div>
 
-      <Reveal className="relative">
-        <ImageBand
-          src={media.heroBand}
-          alt="KBX members gathered around a table at a quarterly in-person meeting"
-          ratio="21:9"
-          priority
-          width={1920}
-          height={823}
-        />
-      </Reveal>
     </section>
   );
 }
@@ -418,14 +410,6 @@ const markets = [
   { label: "Named next", title: "Japan", body: "A long-horizon market for members in technology and precision industry." },
 ];
 
-const nodes = [
-  { x: 148, y: 128, name: "Lagos" },
-  { x: 232, y: 104, name: "Dubai" },
-  { x: 316, y: 92, name: "China" },
-  { x: 356, y: 82, name: "Japan" },
-  { x: 84, y: 70, name: "London" },
-];
-
 export function Markets() {
   return (
     <Section id="markets" className="relative bg-teal">
@@ -439,41 +423,7 @@ export function Markets() {
       </Reveal>
 
       <Reveal className="mt-16">
-        <svg
-          viewBox="0 0 420 180"
-          className="w-full max-w-[720px]"
-          role="img"
-          aria-label="Line diagram showing KBX chapter cities connected as nodes: London, Lagos, Dubai, China and Japan"
-        >
-          <g stroke="rgba(255,255,255,0.5)" strokeWidth="1" fill="none">
-            <polyline points="84,70 148,128 232,104 316,92 356,82" />
-            <line x1="84" y1="70" x2="232" y2="104" />
-          </g>
-          {nodes.map((node, i) => (
-            <circle
-              key={node.name}
-              cx={node.x}
-              cy={node.y}
-              r="4"
-              fill="#CBA135"
-              className="kbx-node-pulse"
-              style={{ animationDelay: `${i * 320}ms` }}
-            />
-          ))}
-          {nodes.map((node) => (
-            <text
-              key={`${node.name}-label`}
-              x={node.x + 10}
-              y={node.y + 4}
-              fill="rgba(255,255,255,0.82)"
-              fontSize="8"
-              fontFamily="JetBrains Mono, monospace"
-              letterSpacing="1.4"
-            >
-              {node.name.toUpperCase()}
-            </text>
-          ))}
-        </svg>
+        <MarketsMap />
       </Reveal>
 
       <div className="mt-16 grid grid-cols-1 gap-6 min-[900px]:grid-cols-2 min-[1240px]:grid-cols-4">

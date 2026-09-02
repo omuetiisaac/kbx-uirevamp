@@ -1,6 +1,6 @@
 # KBX refinement roadmap
 
-- [ ] Strengthen shared type, spacing, button, and motion tokens
-- [ ] Rebalance hero, proof strip, cards, image bands, Markets, Giving, and Join sections
-- [ ] Expand the front-end Join form and scale navigation/footer
-- [ ] Verify responsive rendering, interactions, metadata, and build health
+- [x] Add the supplied interactive world map to Markets
+- [x] Place photography into the hero background
+- [x] Remove the long brand name beside the navigation logo and beneath the footer logo
+- [ ] Verify the three focused changes at desktop and mobile sizes
