@@ -173,6 +173,13 @@
   letter-spacing: -0.035em;
 }
 
+@media (max-width: 480px) {
+  .kbx-h1 {
+    font-size: 2.65rem;
+    line-height: 1.08;
+  }
+}
+
 @utility kbx-h2 {
   font-family: var(--font-display);
   font-weight: 400;
