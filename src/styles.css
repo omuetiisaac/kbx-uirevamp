@@ -173,6 +173,13 @@
   letter-spacing: -0.035em;
 }
 
+@media (max-width: 480px) {
+  .kbx-h1 {
+    font-size: 2.65rem;
+    line-height: 1.08;
+  }
+}
+
 @utility kbx-h2 {
   font-family: var(--font-display);
   font-weight: 400;
@@ -357,6 +364,44 @@
   }
 }
 
+@keyframes kbx-hero-drift {
+  from {
+    transform: scale(1.02);
+  }
+  to {
+    transform: scale(1.08);
+  }
+}
+
+.kbx-hero-background {
+  object-position: center 44%;
+  animation: kbx-hero-drift 18s ease-out alternate infinite;
+}
+
+.kbx-map-marker {
+  animation: kbx-rise 500ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.kbx-map-marker.is-active::before {
+  position: absolute;
+  width: 1.75rem;
+  height: 1.75rem;
+  border: 1px solid var(--kbx-gold);
+  content: "";
+  animation: kbx-map-ring 1.8s ease-out infinite;
+}
+
+@keyframes kbx-map-ring {
+  from {
+    opacity: 0.8;
+    transform: scale(0.35);
+  }
+  to {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
 @utility kbx-hero-item {
   opacity: 0;
   animation: kbx-rise 700ms cubic-bezier(0.22, 1, 0.36, 1) forwards;
@@ -380,7 +425,10 @@
 
 @media (prefers-reduced-motion: reduce) {
   .kbx-hero-item,
-  .kbx-node-pulse {
+  .kbx-node-pulse,
+  .kbx-hero-background,
+  .kbx-map-marker,
+  .kbx-map-marker.is-active::before {
     animation: none !important;
     opacity: 1;
   }

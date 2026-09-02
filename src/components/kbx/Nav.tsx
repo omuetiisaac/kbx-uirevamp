@@ -40,7 +40,7 @@ export function Nav() {
       }}
     >
       <div className="kbx-wrap flex h-full items-center justify-between">
-        <a href="#top" className="flex items-center gap-4">
+        <a href="#top" aria-label="KBX home" className="flex items-center">
           <img
             src={media.logoMark}
             alt="KBX"
@@ -48,9 +48,6 @@ export function Nav() {
             height={32}
             className="h-[32px] w-auto object-contain min-[900px]:h-[40px]"
           />
-          <span className="kbx-micro hidden text-white-56 min-[900px]:inline">
-            Kingdom Business Connections
-          </span>
         </a>
 
         <nav className="hidden items-center gap-9 min-[900px]:flex" aria-label="Primary">

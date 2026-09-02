@@ -26,7 +26,6 @@ export function Footer() {
         <div className="flex flex-col gap-16 min-[900px]:flex-row min-[900px]:justify-between">
           <div className="max-w-sm">
             <img src={media.logoMark} alt="KBX" width={128} height={42} className="h-[42px] w-auto object-contain" />
-            <p className="kbx-micro mt-3 text-white-56">Kingdom Business Connections · Est. 2023</p>
             <p className="mt-7 text-[1.05rem] leading-7 text-white-56">
               A global network of Christian business professionals and entrepreneurs, founded in
               Lagos.
