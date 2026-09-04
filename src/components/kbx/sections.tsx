@@ -18,7 +18,9 @@ import {
   Megaphone,
   Home,
   Stethoscope,
+  ArrowUpRight,
 } from "lucide-react";
+import { Link } from "@tanstack/react-router";
 import {
   Eyebrow,
   GoldButton,
@@ -40,10 +42,10 @@ const ICON = { size: 24, strokeWidth: 1.4 } as const;
 /* ============ 6.1 Hero ============ */
 
 const stats = [
-  { label: "Members", value: "400+" },
-  { label: "Countries", value: "11" },
-  { label: "Chapters", value: "3" },
-  { label: "Founded", value: "Lagos, 2023" },
+  { label: "Charities helped", value: "TBD" },
+  { label: "Countries", value: "50+" },
+  { label: "Chapters", value: "2" },
+  { label: "Subgroups", value: "8–10" },
 ];
 
 export function Hero() {
@@ -69,15 +71,15 @@ export function Hero() {
           className="kbx-h1 kbx-hero-item mt-8 max-w-[20ch] text-white"
           style={{ animationDelay: "60ms" }}
         >
-          A global kingdom network in the marketplace.
+          A global kingdom network built together.
         </h1>
         <p
           className="kbx-lede kbx-hero-item mt-8 max-w-[52ch] text-white-82"
           style={{ animationDelay: "120ms" }}
         >
           KBX connects Christian business professionals and entrepreneurs across continents — to
-          disciple the marketplace, fund kingdom work, and build enterprises that hold their
-          integrity under pressure.
+          support one another, build capacity, fund kingdom work, and serve the marketplace with
+          integrity.
         </p>
         <div
           className="kbx-hero-item mt-12 flex flex-wrap gap-4"
@@ -155,11 +157,8 @@ export function Mission() {
           <Eyebrow tone="dark">01 — Mission</Eyebrow>
           <h2 className="kbx-h2 mt-8 max-w-[34ch] text-white">
             A global network of kingdom-minded professionals, connected and accountable, serving
-            the marketplace for kingdom return.
+            the marketplace.
           </h2>
-          <p className="kbx-lede mt-8 max-w-[60ch] text-white-82">
-            Every part of the mission statement carries its own work. This is how we read it.
-          </p>
         </Reveal>
 
         <div className="mt-16 grid grid-cols-1 gap-px bg-white-18 min-[900px]:grid-cols-2 min-[1240px]:grid-cols-3">
@@ -222,9 +221,14 @@ export function Vision() {
             delay={Math.min(i, 3) * 50}
             className="group bg-paper-2 p-9 transition-colors duration-[200ms] ease-out hover:bg-paper"
           >
-            <item.Icon {...ICON} aria-hidden="true" className="text-ink" />
-            <h3 className="kbx-h3-sm mt-6">{item.title}</h3>
-            <p className="mt-4 text-slate">{item.body}</p>
+            <Link to="/industries" className="block h-full">
+              <item.Icon {...ICON} aria-hidden="true" className="text-ink" />
+              <h3 className="kbx-h3-sm mt-6 flex items-center gap-3">
+                {item.title}
+                <ArrowUpRight size={18} strokeWidth={1.4} aria-hidden="true" />
+              </h3>
+              <p className="mt-4 text-slate">{item.body}</p>
+            </Link>
           </Reveal>
         ))}
       </div>
@@ -315,7 +319,7 @@ export function Story() {
           ))}
         </ol>
 
-        <div className="grid grid-cols-1 gap-6 min-[600px]:grid-cols-3 min-[900px]:grid-cols-1">
+        <div className="grid grid-cols-1 gap-6 min-[900px]:grid-cols-1">
           <Reveal>
             <ImageBand
               src={media.story1}
@@ -329,15 +333,6 @@ export function Story() {
             <ImageBand
               src={media.story2}
               alt="The tenth KBX meeting"
-              ratio="4:5"
-              width={600}
-              height={750}
-            />
-          </Reveal>
-          <Reveal delay={120}>
-            <ImageBand
-              src={media.story3}
-              alt="KBX Lagos first meeting"
               ratio="4:5"
               width={600}
               height={750}
@@ -367,7 +362,7 @@ export function Values() {
     <Section id="values" className="bg-white">
       <Reveal>
         <Eyebrow>04 — Values</Eyebrow>
-        <h2 className="kbx-h2 mt-8 max-w-[28ch]">Eight values we are held to.</h2>
+        <h2 className="kbx-h2 mt-8 max-w-[28ch]">We hold ourselves to these values.</h2>
         <p className="kbx-lede mt-8 max-w-[60ch] text-slate">
           These are the terms of membership rather than a wall poster. Members are reviewed against
           them.
@@ -415,10 +410,10 @@ export function Markets() {
     <Section id="markets" className="relative bg-teal">
       <Reveal>
         <Eyebrow tone="dark">05 — Markets</Eyebrow>
-        <h2 className="kbx-h2 mt-8 max-w-[28ch] text-white">Global reach, named plainly.</h2>
+        <h2 className="kbx-h2 mt-8 max-w-[28ch] text-white">A network without borders.</h2>
         <p className="kbx-lede mt-8 max-w-[60ch] text-white-82">
-          KBX grows by chapter, not by announcement. A market is listed here only once a member is
-          accountable for it.
+          KBX launched in London, with members in the US, Canada, Lagos and Scotland, and is growing
+          rapidly.
         </p>
       </Reveal>
 
@@ -484,39 +479,22 @@ export function Giving() {
         ))}
       </div>
 
-      <Reveal className="mt-16">
-        <GlassPanel className="p-8">
-          <p className="kbx-micro text-gold">Transparency record · extract</p>
-          <table className="mt-8 w-full text-left">
-            <thead>
-              <tr className="border-b border-white/[0.18]">
-                <th className="kbx-micro pb-3 font-medium text-white-56">Cause</th>
-                <th className="kbx-micro pb-3 font-medium text-white-56">Period</th>
-                <th className="kbx-micro pb-3 text-right font-medium text-white-56">Applied</th>
-              </tr>
-            </thead>
-            <tbody>
-              {ledger.map((row) => (
-                <tr key={row.cause} className="border-b border-white/[0.18]">
-                  <td className="py-4 text-white">{row.cause}</td>
-                  <td className="kbx-micro py-4 text-white-56">{row.period}</td>
-                  <td className="py-4 text-right font-mono text-[0.9rem] text-white">{row.amount}</td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </GlassPanel>
-      </Reveal>
-
-      <Reveal className="mt-16">
-        <ImageBand
-          src={media.givingBand}
-          alt="A KBX-funded outreach food distribution"
-          ratio="21:9"
-          width={1920}
-          height={823}
-        />
-      </Reveal>
+       <Reveal className="mt-16">
+         <GlassPanel className="p-8">
+           <p className="kbx-micro text-gold">Member record</p>
+           <h3 className="kbx-h3-sm mt-5 text-white">Transparent detail for members.</h3>
+           <p className="mt-4 max-w-[58ch] text-white-82">
+             Giving records, supporting imagery and detailed programme updates are shared with
+             verified members so every contribution can be followed responsibly.
+           </p>
+           <a
+             href="/auth?next=%2Fgive-details"
+             className="mt-7 inline-flex items-center gap-3 text-sm text-gold underline decoration-gold/50 underline-offset-4"
+           >
+             Sign in to view the record <ArrowUpRight size={17} strokeWidth={1.4} aria-hidden="true" />
+           </a>
+         </GlassPanel>
+       </Reveal>
     </Section>
   );
 }
@@ -568,12 +546,23 @@ export function Goals() {
       </div>
 
       <Reveal className="mt-12 border-t border-hairline pt-8">
-        <p className="kbx-micro text-slate-2">Eight industry subgroups</p>
+        <p className="kbx-micro text-slate-2">Eight industry subgroups · Community</p>
         <ul className="mt-5 flex flex-wrap gap-x-8 gap-y-3">
-          {industries.map((industry) => (
-            <li key={industry} className="kbx-micro flex items-center gap-2 text-slate">
-              <Link2 size={14} strokeWidth={1.4} aria-hidden="true" className="text-gold-deep" />
-              {industry}
+          {industries.map((industry, index) => (
+            <li key={industry} className="kbx-micro text-slate">
+              <Link to="/industries/$industryId" params={{ industryId: [
+                "financial-services",
+                "technology",
+                "real-estate-construction",
+                "energy",
+                "healthcare",
+                "trade-logistics",
+                "agriculture",
+                "professional-services",
+              ][index] ?? "technology" }} className="flex items-center gap-2 transition-colors hover:text-ink">
+                <Link2 size={14} strokeWidth={1.4} aria-hidden="true" className="text-gold-deep" />
+                {industry}
+              </Link>
             </li>
           ))}
         </ul>
